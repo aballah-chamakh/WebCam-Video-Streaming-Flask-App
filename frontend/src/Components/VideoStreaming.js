@@ -5,8 +5,8 @@ import './stream.css' ;
 
 class VideoStreaming extends React.Component {
    move_robot = (action)=>{
-    let HOST_URL = 'http://127.0.0.1:5000'
-    axios.get(HOST_URL+'/'+action).then(res=>{
+    let HOST_URL = window.location.href
+    axios.get(HOST_URL+action).then(res=>{
       console.log(res);
     })
   }
@@ -17,7 +17,7 @@ class VideoStreaming extends React.Component {
       <div style={{display:'flex',justifyContent:'space-around'}}>
       <div style={{width:'70%'}}>
           <h1>Hi Abdallah !!</h1>
-          <img style={{width:'100%',height:'80vh'}} src={HOST_URL+'/video_stream'} />
+          <img style={{width:'100%',height:'80vh'}} src={window.location.href+'video_stream'} />
       </div>
       <div style={{display:'flex',width:'25%',flexDirection:'column',alignItems:'center'}}>
       <h1>Control Panel</h1>
